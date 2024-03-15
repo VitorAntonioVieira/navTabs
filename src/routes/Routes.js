@@ -2,12 +2,37 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
+import styled, { keyframes } from "styled-components";
 import Home from "../screens/Home";
 import Feed from "../screens/Feed";
 import About from "../screens/About";
 import Blog from "../screens/Blog";
 import Info1 from "../screens/Info1";
 import Info2 from "../screens/Info2";
+
+// const OpenContainer = styled.div`
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: '#1c1c1a';
+//     position: fixed;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     div.logo-separated{
+//         width: 30vw;
+//     }
+// `;
+
+// const OpenFunction = () => {
+//     return (
+//         <OpenContainer>
+//             <img src="" />
+//         </OpenContainer>
+//     )
+// }
+
+// const Open = OpenFunction();
 
 const Drawer = createDrawerNavigator();
 
@@ -16,8 +41,11 @@ export default function Routes() {
         <Drawer.Navigator
             initialRouteName="Início"
             screenOptions={{
-                tabBarActiveTintColor: "tomato",
-                tabBarInactiveTintColor: "#ccc"
+                tabBarActiveTintColor: "#1e62a9",
+                tabBarInactiveTintColor: "#ccc",
+                headerTransparent: true,
+                headerTitle: '',
+                headerPressColor: '#fff'
             }}
         >
             <Drawer.Screen
@@ -35,7 +63,7 @@ export default function Routes() {
             />
             <Drawer.Screen
                 name="Blog"
-                component={NativeStackRoutes} 
+                component={NativeStackRoutes}
                 options={{
                     drawerLabel: "Blog",
                     drawerIcon: ({ size, color }) => {
@@ -45,8 +73,8 @@ export default function Routes() {
                             name="at" />
                     }
                 }}
-                />
-        </Drawer.Navigator>
+            />
+        </Drawer.Navigator >
     )
 };
 
@@ -57,7 +85,7 @@ const TabBottomRoutes = () => {
         <TabBottom.Navigator
             initialRouteName="Home"
             screenOptions={{
-                tabBarActiveTintColor: 'tomato',
+                tabBarActiveTintColor: '#1e62a9',
                 tabBarInactiveTintColor: '#ccc',
                 headerShown: false
             }}>
@@ -101,7 +129,7 @@ const NativeStackRoutes = ({ navigation }) => {
         <Stack.Navigator
             initialRouteName="Blog"
             screenOptions={{
-                headerShown: false
+                headerShown: false,
             }}>
             <Stack.Screen
                 name="Blog"

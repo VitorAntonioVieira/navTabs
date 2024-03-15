@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 export default function Blog({ navigation }) {
     return (
         <View style={styles.container}>
+            <Text style={styles.title}>Página Blog</Text>
             <Pressable
                 style={styles.button}
                 onPress={() => navigation.navigate("Info 1")}
@@ -21,9 +22,13 @@ export default function Blog({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        height: 150,
-        justifyContent: 'space-between',
+        flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
+    },
+    title: {
+        fontSize: 20,
+        marginBottom: 20
     },
     button: {
         height: 50,
@@ -32,6 +37,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
+        marginBottom: 30
     },
     label: {
         color: 'white',
