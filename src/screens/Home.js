@@ -18,7 +18,7 @@ export default function Home({ navigation }) {
             <Pressable style={styles.logOutBtn}>
                 <Text style={styles.logLabel}>Log Out</Text>
             </Pressable>
-            <Image source={require('../assets/img/components/app-wave.png')} />
+            <Image style={{marginLeft: -1}} source={require('../assets/img/components/app-wave.png')} />
             <View style={styles.homePanel}>
                 <Text style={styles.homeTitle}>Bem-vindo ao FIRST APP</Text>
                 <Text style={styles.homeSubtitle}>Inspirando jovens pelo mundo todo!</Text>
@@ -109,6 +109,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         zIndex: 1000,
         top: 50, left: 300
+    },
+    logLabel: {
+        color: '#0166b3',
+        fontWeight: '600',
     },
     homePanel: {
         flex: 1,
